@@ -1,4 +1,4 @@
-package fr.cblancheton.automaton;
+package fr.cblancheton.automaton.model;
 
 /**
  * Created by charles on 12/10/16.

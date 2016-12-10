@@ -1,6 +1,6 @@
 package fr.cblancheton.automaton.view;
 
-import fr.cblancheton.automaton.Cell;
+import fr.cblancheton.automaton.model.Cell;
 import javafx.scene.shape.Rectangle;
 
 /**

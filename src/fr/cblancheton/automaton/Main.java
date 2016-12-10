@@ -1,5 +1,6 @@
 package fr.cblancheton.automaton;
 
+import fr.cblancheton.automaton.model.Automaton;
 import fr.cblancheton.automaton.view.AutomatonView;
 import javafx.application.Application;
 import javafx.scene.Scene;

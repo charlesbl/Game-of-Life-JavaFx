@@ -1,4 +1,4 @@
-package fr.cblancheton.automaton;
+package fr.cblancheton.automaton.model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package fr.cblancheton.automaton.view;
 
-import fr.cblancheton.automaton.Grid;
+import fr.cblancheton.automaton.model.Grid;
 import javafx.scene.Group;
 
 /**
