@@ -4,10 +4,14 @@ package fr.cblancheton.automaton.model;
  * Created by charles on 12/10/16.
  */
 public class Automaton {
+    public static final int SIZE = 100;
+
     private Grid grid;
+    private int numGen;
 
     public Automaton(){
-        this.grid = new Grid(10, 10);
+        this.grid = new Grid(SIZE, SIZE);
+        this.numGen = 0;
     }
 
     public void nextGeneration(){
@@ -19,9 +23,14 @@ public class Automaton {
                 e.printStackTrace();
             }
         });
+        this.numGen++;
     }
 
     public Grid getGrid() {
         return this.grid;
+    }
+
+    public int getNumGen() {
+        return numGen;
     }
 }

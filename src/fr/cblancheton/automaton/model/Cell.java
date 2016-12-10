@@ -9,7 +9,6 @@ import java.util.List;
 public class Cell {
     private int x;
     private int y;
-
     private Grid grid;
 
     private State state;
@@ -26,12 +25,14 @@ public class Cell {
     public State processNewState(){
         int aliveCount = 0;
 
-        for(Cell cell : this.getCellsAround()){
+        for(Cell cell : this.getHeigtCellsAround()){
             if(cell.getState() == State.ALIVE)
                 aliveCount++;
         }
 
-        if(aliveCount > 3)
+        if(aliveCount == 3 && this.state == State.DEAD)
+            this.newState = State.ALIVE;
+        else if((aliveCount == 2 || aliveCount == 3) && this.state == State.ALIVE)
             this.newState = State.ALIVE;
         else
             this.newState = State.DEAD;
@@ -65,12 +66,22 @@ public class Cell {
         return this.grid.getCell(this.x - 1, this.y);
     }
 
-    public List<Cell>getCellsAround(){
+    public List<Cell> getFourCellsAround(){
         List<Cell> list = new ArrayList<>();
         list.add(this.getTopCell());
         list.add(this.getRightCell());
         list.add(this.getBottomCell());
         list.add(this.getLeftCell());
+        return list;
+    }
+
+    public List<Cell> getHeigtCellsAround(){
+        List<Cell> list = new ArrayList<>();
+        list.addAll(this.getFourCellsAround());
+        list.add(this.getLeftCell().getTopCell());
+        list.add(this.getLeftCell().getBottomCell());
+        list.add(this.getRightCell().getTopCell());
+        list.add(this.getRightCell().getBottomCell());
         return list;
     }
 
@@ -89,4 +100,9 @@ public class Cell {
     public void setState(State state){
         this.state = state;
     }
+
+    public Grid getGrid() {
+        return grid;
+    }
+
 }

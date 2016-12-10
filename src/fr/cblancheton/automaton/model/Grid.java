@@ -11,13 +11,9 @@ public class Grid {
     private final int width;
     private final int height;
 
-    private int numGen;
-
     public Grid(int width, int height){
         this.width = width;
         this.height = height;
-
-        this.numGen = 0;
 
         this.cells = new Cell[width][height];
         for(int i = 0; i < width; i++)
