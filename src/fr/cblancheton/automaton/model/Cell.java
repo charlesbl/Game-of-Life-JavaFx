@@ -47,4 +47,16 @@ public class Cell {
     public Cell getLeftCell(){
         return this.grid.getCell(this.x - 1, this.y);
     }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
+    }
+
+    public State getState() {
+        return this.state;
+    }
 }

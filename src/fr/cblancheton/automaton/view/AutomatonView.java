@@ -15,6 +15,12 @@ public class AutomatonView extends Group{
     public AutomatonView(Automaton automaton){
         this.automaton = automaton;
         this.gridView = new GridView(this.automaton.getGrid());
-        this.buttonsView = new ButtonsView(automaton);
+        this.gridView.setLayoutY(50);
+        this.buttonsView = new ButtonsView(automaton, this);
+        this.getChildren().addAll(this.gridView, this.buttonsView);
+    }
+
+    public void update(){
+        this.gridView.update();
     }
 }
