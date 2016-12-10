@@ -3,10 +3,10 @@ package fr.cblancheton.automaton;
 /**
  * Created by charles on 12/10/16.
  */
-public class Automate {
+public class Automaton {
     private Grid grid;
 
-    public Automate(){
+    public Automaton(){
         this.grid = new Grid(10, 10);
     }
 
@@ -19,5 +19,9 @@ public class Automate {
                 e.printStackTrace();
             }
         });
+    }
+
+    public Grid getGrid() {
+        return this.grid;
     }
 }
