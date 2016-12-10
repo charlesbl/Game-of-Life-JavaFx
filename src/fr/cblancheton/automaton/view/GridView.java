@@ -11,6 +11,6 @@ public class GridView extends Group{
 
     public GridView(Grid grid){
         this.grid = grid;
-        //TODO init all cells
+        this.grid.getCells().forEach(cell -> this.getChildren().add(new CellView(cell)));
     }
 }
