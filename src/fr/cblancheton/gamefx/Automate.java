@@ -11,6 +11,13 @@ public class Automate {
     }
 
     public void nextGeneration(){
-
+        this.grid.getCells().stream().forEach(cell -> cell.processNewState());
+        this.grid.getCells().stream().forEach(cell -> {
+            try{
+                cell.nextGen();
+            }catch (IllegalStateException e){
+                e.printStackTrace();
+            }
+        });
     }
 }

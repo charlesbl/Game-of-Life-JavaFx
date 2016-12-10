@@ -5,5 +5,5 @@ package fr.cblancheton.gamefx;
  */
 public enum State {
     DEAD,
-    ALIVE
+    ALIVE;
 }
