@@ -19,6 +19,7 @@ public class Grid {
 
         this.numGen = 0;
 
+        this.cells = new Cell[width][height];
         for(int i = 0; i < width; i++)
             for(int j = 0; j < height; j++)
                 this.cells[i][j] = new Cell(i, j);
