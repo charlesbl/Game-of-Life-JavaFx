@@ -21,6 +21,14 @@ public class CellView extends Rectangle{
         this.setLayoutX(this.cell.getX() * CELL_SIZE);
         this.setLayoutY(this.cell.getY() * CELL_SIZE);
 
+        this.setOnMouseClicked(event -> {
+            if(this.cell.getState() == State.ALIVE)
+                this.cell.setState(State.DEAD);
+            else if(this.cell.getState() == State.DEAD)
+                this.cell.setState(State.ALIVE);
+            this.update();
+        });
+
         this.update();
     }
 
