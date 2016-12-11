@@ -10,7 +10,10 @@ import javafx.scene.text.Text;
  */
 public class TopView extends Group{
     private final Button nextGenButton;
+    private final Button toggleTaskButton;
     private final Text numGenText;
+
+    private final NextGenTask nextGenTask;
 
     private final Automaton automaton;
     private final AutomatonView automatonView;
@@ -19,16 +22,18 @@ public class TopView extends Group{
         this.automaton = automaton;
         this.automatonView = automatonView;
 
+        this.nextGenTask = new NextGenTask(this.automaton, this.automatonView);
+
         this.nextGenButton = new Button("Next");
+        this.toggleTaskButton = new Button("Start");
+        this.toggleTaskButton.setLayoutX(100);
         this.numGenText = new Text();
-        this.numGenText.setLayoutX(this.nextGenButton.getWidth() + 10);
+        this.numGenText.setLayoutX(300);
 
-        this.nextGenButton.setOnAction(event -> {
-            this.automaton.nextGeneration();
-            this.automatonView.update();
-        });
+        this.nextGenButton.setOnAction(event -> this.nextGenTask.run());
+        this.toggleTaskButton.setOnAction(event -> this.nextGenTask.toggle());
 
-        this.getChildren().addAll(this.nextGenButton, this.numGenText);
+        this.getChildren().addAll(this.nextGenButton, this.toggleTaskButton, this.numGenText);
     }
 
     public void update(){

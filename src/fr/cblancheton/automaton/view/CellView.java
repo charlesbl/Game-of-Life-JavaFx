@@ -9,7 +9,7 @@ import javafx.scene.shape.Rectangle;
  * Created by charles on 12/10/16.
  */
 public class CellView extends Rectangle{
-    public static final double CELL_SIZE = 6;
+    public static final double CELL_SIZE = 12;
 
     private final Cell cell;
 

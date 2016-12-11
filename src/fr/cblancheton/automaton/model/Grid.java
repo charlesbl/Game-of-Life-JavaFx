@@ -7,7 +7,7 @@ import java.util.List;
  * Created by charles on 12/10/16.
  */
 public class Grid {
-    private Cell cells[][];
+    private final Cell cells[][];
     private final int width;
     private final int height;
 

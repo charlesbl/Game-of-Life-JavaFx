@@ -9,7 +9,7 @@ import java.util.List;
 public class Cell {
     private int x;
     private int y;
-    private Grid grid;
+    private final Grid grid;
 
     private State state;
     private State newState;
