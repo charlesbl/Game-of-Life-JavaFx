@@ -18,7 +18,7 @@ public class Cell {
         this.grid = grid;
         this.x = x;
         this.y = y;
-        this.state = State.DEAD;
+        this.state = State.INIT;
         this.newState = null;
     }
 
@@ -30,12 +30,14 @@ public class Cell {
                 aliveCount++;
         }
 
-        if(aliveCount == 3 && this.state == State.DEAD)
+        if(aliveCount == 3 && (this.state == State.DEAD || this.state == State.INIT))
             this.newState = State.ALIVE;
         else if((aliveCount == 2 || aliveCount == 3) && this.state == State.ALIVE)
             this.newState = State.ALIVE;
-        else
+        else if(this.state != State.INIT )
             this.newState = State.DEAD;
+        else
+            this.newState = State.INIT;
 
         return this.newState;
     }

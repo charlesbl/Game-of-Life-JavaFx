@@ -9,7 +9,7 @@ import java.util.TimerTask;
  * Created by charles on 12/11/16.
  */
 public class NextGenTask extends TimerTask {
-    public static final int FPS = 60;
+    public static final int FPS = 10;
 
     private final Automaton automaton;
     private final AutomatonView automatonView;
